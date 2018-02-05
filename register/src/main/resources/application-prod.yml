@@ -1,0 +1,23 @@
+spring:
+  application:
+    #应用名称
+    name: register-server
+server:
+  #端口
+  port: 8762
+eureka:
+  instance:
+    #终端名称
+    hostname: localhost
+  client:
+    #单服务模式（服务端不注册自己）
+    register-with-eureka: false
+    fetch-registry: false
+    serverUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    #多服务模式
+    #register-with-eureka: true
+    #fetch-registry: true
+    #   serverUrl:
+    #   defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/，http://${eureka.instance.hostname}:${server.port}/eureka/
+

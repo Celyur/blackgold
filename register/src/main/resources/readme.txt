@@ -1,0 +1,2 @@
+1.如果需要使用@PropertySource注解的方式加载值，就要使用properties为后缀的配置文件，这是由于yml文件
+不能通过@PropertySource注解加载
