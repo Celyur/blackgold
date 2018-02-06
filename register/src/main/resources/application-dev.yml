@@ -14,10 +14,14 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     serverUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://@127.0.0.1:8761/eureka/
     #多服务模式
     #register-with-eureka: true
     #fetch-registry: true
     #   serverUrl:
     #   defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/，http://${eureka.instance.hostname}:${server.port}/eureka/
+#安全验证
+security:
+  basic:
+    enabled: false
 
