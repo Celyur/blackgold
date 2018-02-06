@@ -1,11 +1,13 @@
 spring:
   application:
     name: webApplication
+server:
+  port: 8080
 eureka:
   instance:
     #prefer-ip-address: true
-    #preferIpAddress: true
-    #instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    preferIpAddress: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
   client:
