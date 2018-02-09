@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: organ
+  datasource:
+    driver-class-name:  com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url:  jdbc:mysql://localhost/blackgold?characterEncoding=utf-8&useSSL=false
+  jpa:
+    show-sql: true
+  session:
+    store-type: none
+server:
+  port: 8091
+  context-path: /organ
+eureka:
+  instance:
+    #prefer-ip-address: true
+    preferIpAddress: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
