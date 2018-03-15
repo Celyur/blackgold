@@ -74,3 +74,10 @@
          <artifactId>web</artifactId>
          <version>0.0.1-SNAPSHOT</version>
          <packaging>jar</packaging>
+####5.防idea默认用1.5jdk
+    可在父模块pom.xml的<properties>节点添加如下配置：
+        <!-- 防止idea每次都将工程的Target bytecode version恢复到1.5版本进行编译 begin-->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!-- 防止idea每次都将工程的Target bytecode version恢复到1.5版本进行编译 end-->
+         
